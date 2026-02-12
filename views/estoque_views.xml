@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seq_entrada" model="ir.sequence">
+        <field name="name">Entrada Combustível</field>
+        <field name="code">controle.estoque.entrada</field>
+        <field name="prefix">ENT/</field>
+        <field name="padding">5</field>
+    </record>
+
+    <record id="view_estoque_form" model="ir.ui.view">
+        <field name="name">controle.estoque.form</field>
+        <field name="model">controle.estoque</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="capacidade"/>
+                        <field name="quantidade_atual"/>
+                        <field name="percentual" widget="progressbar"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_entrada_tree" model="ir.ui.view">
+        <field name="name">controle.estoque.entrada.tree</field>
+        <field name="model">controle.estoque.entrada</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="data"/>
+                <field name="quantidade"/>
+                <field name="valor_litro"/>
+                <field name="valor_total"/>
+                <field name="fornecedor"/>
+                <field name="nota_fiscal"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_entrada_form" model="ir.ui.view">
+        <field name="name">controle.estoque.entrada.form</field>
+        <field name="model">controle.estoque.entrada</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="estoque_id"/>
+                            <field name="data"/>
+                        </group>
+                        <group>
+                            <field name="quantidade"/>
+                            <field name="valor_litro"/>
+                            <field name="valor_total" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="fornecedor"/>
+                        <field name="nota_fiscal"/>
+                        <field name="usuario_id" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_estoque" model="ir.actions.act_window">
+        <field name="name">Tanques</field>
+        <field name="res_model">controle.estoque</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_entrada" model="ir.actions.act_window">
+        <field name="name">Entradas</field>
+        <field name="res_model">controle.estoque.entrada</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

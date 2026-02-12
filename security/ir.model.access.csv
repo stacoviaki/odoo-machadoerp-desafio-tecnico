@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_abastecimento_motorista,abastecimento.motorista,model_controle_abastecimento,group_motorista,1,1,1,0
+access_abastecimento_analista,abastecimento.analista,model_controle_abastecimento,group_analista,1,0,0,0
+access_abastecimento_admin,abastecimento.admin,model_controle_abastecimento,group_admin,1,1,1,1
+access_estoque_motorista,estoque.motorista,model_controle_estoque,group_motorista,1,0,0,0
+access_estoque_analista,estoque.analista,model_controle_estoque,group_analista,1,0,0,0
+access_estoque_admin,estoque.admin,model_controle_estoque,group_admin,1,1,1,1
+access_entrada_admin,entrada.admin,model_controle_estoque_entrada,group_admin,1,1,1,1
+access_entrada_analista,entrada.analista,model_controle_estoque_entrada,group_analista,1,0,0,0

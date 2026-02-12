@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_motorista" model="res.groups">
+        <field name="name">Combustível: Motorista</field>
+    </record>
+    
+    <record id="group_analista" model="res.groups">
+        <field name="name">Combustível: Analista</field>
+        <field name="implied_ids" eval="[(4, ref('group_motorista'))]"/>
+    </record>
+    
+    <record id="group_admin" model="res.groups">
+        <field name="name">Combustível: Administrador</field>
+        <field name="implied_ids" eval="[(4, ref('group_analista'))]"/>
+    </record>
+</odoo>

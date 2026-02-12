@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_combustivel" 
+              name="Combustível" 
+              sequence="10"
+              groups="group_motorista,group_analista,group_admin"/>
+    
+    <menuitem id="menu_abastecimentos" 
+              name="Abastecimentos" 
+              parent="menu_combustivel" 
+              action="action_abastecimento" 
+              sequence="10"/>
+    
+    <menuitem id="menu_estoque" 
+              name="Estoque" 
+              parent="menu_combustivel" 
+              sequence="20"/>
+    
+    <menuitem id="menu_tanques" 
+              name="Tanques" 
+              parent="menu_estoque" 
+              action="action_estoque" 
+              sequence="10"/>
+    
+    <menuitem id="menu_entradas" 
+              name="Entradas" 
+              parent="menu_estoque" 
+              action="action_entrada" 
+              sequence="20"/>
+</odoo>
